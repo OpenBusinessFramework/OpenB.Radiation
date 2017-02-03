@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace OpenB.Radiation
 {
-    public partial class Form1 : Form
+    public partial class ProjectForm : Form
     {
-        public Form1()
+        public ProjectForm()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
