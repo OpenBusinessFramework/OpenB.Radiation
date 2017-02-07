@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textProjectName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textProjectDescription = new System.Windows.Forms.TextBox();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textProjectName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(151, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 24);
-            this.textBox1.TabIndex = 0;
+            this.textProjectName.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textProjectName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textProjectName.Location = new System.Drawing.Point(151, 14);
+            this.textProjectName.Name = "textProjectName";
+            this.textProjectName.Size = new System.Drawing.Size(288, 24);
+            this.textProjectName.TabIndex = 0;
             // 
             // label1
             // 
@@ -65,32 +67,36 @@
             this.label2.Text = "Short description";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox2
+            // textProjectDescription
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(151, 44);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(288, 94);
-            this.textBox2.TabIndex = 2;
+            this.textProjectDescription.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textProjectDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textProjectDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textProjectDescription.Location = new System.Drawing.Point(151, 44);
+            this.textProjectDescription.Multiline = true;
+            this.textProjectDescription.Name = "textProjectDescription";
+            this.textProjectDescription.Size = new System.Drawing.Size(288, 94);
+            this.textProjectDescription.TabIndex = 2;
             // 
-            // button1
+            // buttonCancel
             // 
-            this.button1.Location = new System.Drawing.Point(577, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "&Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonCancel.Location = new System.Drawing.Point(577, 226);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 4;
+            this.buttonCancel.Text = "&Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // button2
+            // buttonOk
             // 
-            this.button2.Location = new System.Drawing.Point(496, 226);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "&Ok";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonOk.Location = new System.Drawing.Point(496, 226);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(75, 23);
+            this.buttonOk.TabIndex = 5;
+            this.buttonOk.Text = "&Ok";
+            this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // ProjectForm
             // 
@@ -98,19 +104,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(664, 261);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonOk);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textProjectDescription);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textProjectName);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProjectForm";
             this.ShowIcon = false;
-            this.Text = "ProjectForm";
+            this.Text = "Project - Create New";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,11 +124,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textProjectName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textProjectDescription;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonOk;
     }
 }

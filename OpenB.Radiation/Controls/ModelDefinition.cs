@@ -3,18 +3,38 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using OpenB.Radiation.Views;
 
 namespace OpenB.Radiation.Controls
 {
     public class ModelDefinition : MoveableControl
     {
-        public ModelDefinition()
+        readonly ModelDefinitionView modelDefinitionView;
+
+        public ModelDefinition(ModelDefinitionView modelDefinitionView)
         {
+            if (modelDefinitionView == null)
+                throw new ArgumentNullException(nameof(modelDefinitionView));
+
+            this.modelDefinitionView = modelDefinitionView;
+
+            this.DefinitionName = modelDefinitionView.Name;
+            this.Location = new Point(modelDefinitionView.HorizontalPosition, modelDefinitionView.VerticalPosition);
+            this.Width = modelDefinitionView.Width;
+            this.Height = modelDefinitionView.Height;      
+
             members = new List<ModelMemberNode>();
 
             this.OnPropertyMouseClick += ModelDefinition_OnPropertyMouseClick;
             this.OnPropertyMouseMove += ModelDefinition_OnPropertyMouseMove;
+            this.OnEndDragging += ModelDefinition_OnEndDragging;
             this.drawingInformation = new Dictionary<Rectangle, ModelMemberNode>();
+        }
+
+        private void ModelDefinition_OnEndDragging(MouseEventArgs e)
+        {
+            this.modelDefinitionView.HorizontalPosition = e.Location.X;
+            this.modelDefinitionView.VerticalPosition = e.Location.Y;         
         }
 
         public virtual void ModelDefinition_OnPropertyMouseMove(object sender, MouseEventArgs e)

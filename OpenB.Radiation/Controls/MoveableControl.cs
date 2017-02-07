@@ -14,6 +14,8 @@ namespace OpenB.Radiation.Controls
 
         public bool AllowMove { get; set; }
 
+        public event EndDragEventHandler OnEndDragging;
+        public delegate void EndDragEventHandler(MouseEventArgs e);
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
@@ -36,6 +38,8 @@ namespace OpenB.Radiation.Controls
                 Capture = false;
                 dragging = false;
                 Cursor = Cursors.Arrow;
+
+                OnEndDragging(e);
             }
 
             base.OnMouseUp(e);
